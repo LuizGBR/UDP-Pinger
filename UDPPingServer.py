@@ -12,9 +12,8 @@ serverSocket.bind((recieve_host, recieve_port))
 
 
 while True:
-  message, address = serverSocket.recvfrom(10)
-  message = message.upper()
-  print('Recieve: ' + message)
+  message, address = serverSocket.recvfrom(2048);
+  print('Recieve: ' + message.decode())
 
   serverSocket.sendto(message, address)
  
